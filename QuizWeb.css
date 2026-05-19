@@ -1,0 +1,75 @@
+html, body{
+
+    background-color: rgb(28, 87, 46);
+
+}
+
+.question{
+    background: rgba(255, 255, 255, 0.2);
+    width: 50dvh;
+    padding: 30px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 30px;
+    font-size: 15.5px;
+    backdrop-filter: blur(10px);
+    color: rgb(0, 0, 0);
+    text-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+    height: auto;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+
+text-align: center;
+color: white;
+
+}
+
+button{
+
+height: 50px;
+width: 100px;
+text-align: center;
+align-items: center;
+background-color: rgb(109, 159, 127);
+border-radius: 0px;
+
+}
+
+p{
+
+text-align: center;
+
+}
+
+button:hover {
+
+    transform: scale(1.05);
+    cursor: pointer;
+
+}
+
+.box{
+    background: rgb(207, 212, 83);
+    width: 15dvh;
+    padding: 5px;
+    margin: auto;
+    margin-right: 30px;
+    border-radius: 30px;
+    font-size: 15.5px;
+    backdrop-filter: blur(10px);
+    color: rgb(0, 0, 0);
+    text-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+    height: auto;
+    align-items: right;
+    text-align: right;
+}
+
+h2{
+
+    text-align: center;
+
+}
+
