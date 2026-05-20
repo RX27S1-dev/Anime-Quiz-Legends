@@ -1,133 +1,187 @@
 let score = 0;
 
-document.getElementById("correct1").onclick = function () {
+let scoreText = document.getElementById("score");
 
-    score++;
+let questionText = document.getElementById("questionText");
 
-    document.getElementById("score").innerText = "Score: " + score;
+let answerButtons = document.querySelectorAll(".answerBtn");
 
-    document.getElementById("correct1").disabled = true;
+/* QUESTIONS */
 
-    document.getElementById("correct1").style.backgroundColor = "green";
+let questions = [
+
+    {
+        question: "Who was the 2nd Hokage?",
+        answers: [
+            "Naruto Uzumaki",
+            "Hashirama Senju",
+            "Tobirama Senju"
+        ],
+        correct: "Tobirama Senju"
+    },
+
+    {
+        question: "Who was Goku's first training partner?",
+        answers: [
+            "Krillin",
+            "Vegeta",
+            "Jiren"
+        ],
+        correct: "Krillin"
+    },
+
+    {
+        question: "Who gave the Straw Hat to Luffy?",
+        answers: [
+            "Shanks",
+            "Kaido",
+            "Zoro"
+        ],
+        correct: "Shanks"
+    },
+
+    {
+        question: "Who was Gojo's best friend?",
+        answers: [
+            "Sukuna",
+            "Yuji Itadori",
+            "Suguru Geto"
+        ],
+        correct: "Suguru Geto"
+    },
+
+    {
+
+        question: "Who is the main character of Jujustsu Kaisen?",
+        answers: [
+            "Ryomen Sukuna",
+            "Saturo Gojo",
+            "Yuji Itadori"
+        ],
+        correct: "Yuji Itadori"
+
+    }
+
+];
+
+/* RANDOMIZE */
+
+questions.sort(() => Math.random() - 0.5);
+
+let currentQuestion = 0;
+
+/* LOAD QUESTION */
+
+function loadQuestion() {
+
+    let q = questions[currentQuestion];
+
+    questionText.innerText = q.question;
+
+    answerButtons.forEach((button, index) => {
+
+        button.innerText = q.answers[index];
+
+        button.disabled = false;
+
+        button.style.backgroundColor = "#5fa97a";
+
+        button.onclick = function () {
+
+            if (button.innerText === q.correct) {
+
+                score++;
+
+                scoreText.innerText = "Score: " + score;
+
+            }
+
+            answerButtons.forEach(btn => {
+
+                btn.disabled = true;
+
+                if (btn.innerText === q.correct) {
+
+                    btn.style.backgroundColor = "green";
+
+                } else {
+
+                    btn.style.backgroundColor = "red";
+
+                }
+
+            });
+
+            setTimeout(() => {
+
+                currentQuestion++;
+
+                if (currentQuestion < questions.length) {
+
+                    loadQuestion();
+
+                } else {
+
+                    endQuiz();
+
+                }
+
+            }, 1000);
+
+        };
+
+    });
 
 }
 
+/* END QUIZ */
 
-document.getElementById("correct2").onclick = function () {
+function endQuiz() {
 
-    score++;
+    questionText.innerText =
+    "🏆 Quiz Finished! Final Score: " +
+    score + "/" + questions.length;
 
-    document.getElementById("score").innerText = "Score: " + score;
+    answerButtons.forEach(button => {
 
-    document.getElementById("correct2").disabled = true;
+        button.style.display = "none";
 
-    document.getElementById("correct2").style.backgroundColor = "green";
-
-}
-
-
-document.getElementById("correct3").onclick = function () {
-
-    score++;
-
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct3").disabled = true;
-
-    document.getElementById("correct3").style.backgroundColor = "green";
+    });
 
 }
 
+/* START */
 
-document.getElementById("correct4").onclick = function () {
+loadQuestion();
 
-    score++;
+/* REFRESH */
 
-    document.getElementById("score").innerText = "Score: " + score;
+document.getElementById("refreshBtn").onclick = function () {
 
-    document.getElementById("correct4").disabled = true;
+    location.reload();
 
-    document.getElementById("correct4").style.backgroundColor = "green";
+};
 
-}
+/* MUSIC */
 
+let music = document.getElementById("bgMusic");
 
-document.getElementById("correct5").onclick = function () {
+let musicBtn = document.getElementById("musicBtn");
 
-    score++;
+musicBtn.onclick = function () {
 
-    document.getElementById("score").innerText = "Score: " + score;
+    if (music.paused) {
 
-    document.getElementById("correct5").disabled = true;
+        music.play();
 
-    document.getElementById("correct5").style.backgroundColor = "green";
+        musicBtn.innerText = "⏸ Pause Music";
 
-}
+    } else {
 
+        music.pause();
 
-document.getElementById("correct6").onclick = function () {
+        musicBtn.innerText = "▶ Play Music";
 
-    score++;
+    }
 
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct6").disabled = true;
-
-    document.getElementById("correct6").style.backgroundColor = "green";
-
-}
-
-document.getElementById("correct7").onclick = function () {
-
-    score++;
-
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct7").disabled = true;
-
-    document.getElementById("correct7").style.backgroundColor = "green";
-
-}
-
-document.getElementById("correct8").onclick = function () {
-
-    score++;
-
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct8").disabled = true;
-
-    document.getElementById("correct8").style.backgroundColor = "green";
-
-}
-
-document.getElementById("correct9").onclick = function () {
-
-    score++;
-
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct9").disabled = true;
-
-    document.getElementById("correct9").style.backgroundColor = "green";
-
-}
-
-document.getElementById("correct10").onclick = function () {
-
-    score++;
-
-    document.getElementById("score").innerText = "Score: " + score;
-
-    document.getElementById("correct10").disabled = true;
-
-    document.getElementById("correct10").style.backgroundColor = "green";
-
-}
-
-document.getElementById("wrongn").onclick = function () {
-
-    document.getElementById("wrongn").style.backgroundColor = "red";
-
-}
-
+};
