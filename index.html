@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Anime Quiz Legends</title>
+
     <link rel="stylesheet" href="QuizWeb.css">
+
 </head>
 
 <body>
@@ -18,7 +24,9 @@
     <!-- SCORE -->
 
     <div class="box">
+
         <h2 id="score">Score: 0</h2>
+
     </div>
 
     <!-- TOP BUTTONS -->
@@ -31,11 +39,69 @@
 
     </div>
 
+    <!-- START SCREEN -->
+
+    <div id="startScreen">
+
+        <h1>🔥 Anime Quiz Legends 🔥</h1>
+
+        <!-- CATEGORY -->
+
+        <select id="categorySelect">
+
+            <option value="all">All Anime</option>
+            <option value="naruto">Naruto</option>
+            <option value="dbz">Dragon Ball</option>
+            <option value="onepiece">One Piece</option>
+            <option value="jjk">Jujutsu Kaisen</option>
+
+        </select>
+
+        <!-- DIFFICULTY -->
+
+        <select id="difficultySelect">
+
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+
+        </select>
+
+        <br>
+
+        <input type="text" id="usernameInput" placeholder="Enter Username">
+
+        <br>
+
+        <button id="startBtn">▶ Start Game</button>
+
+    </div>
+
     <!-- QUIZ -->
 
-    <div class="question">
+    <div class="question" id="quizBox" style="display:none;">
+
+        <h2 id="timer">Time: 10</h2>
+
+        <h2 id="progress">Question 1 / 1</h2>
+
+        <h2 id="highScore">High Score: 0</h2>
+
+        <h2 id="playerName"></h2>
+
+        <h2 id="levelText">Level 1 Beginner</h2>
+
+<div class="xpContainer">
+
+    <div id="xpBar"></div>
+
+</div>
+
+        <h2 id="streak">🔥 Streak: 0</h2>
 
         <h1>Anime Quiz</h1>
+
+          
 
         <p id="questionText"></p>
 
@@ -52,3 +118,5 @@
     <script src="QuizWeb.js"></script>
 
 </body>
+
+</html>

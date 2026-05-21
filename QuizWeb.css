@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
 
     margin: 0;
     padding: 0;
@@ -12,6 +13,11 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: 1s;
 
 }
 
@@ -29,6 +35,8 @@ html, body {
 
     color: white;
 
+    backdrop-filter: blur(10px);
+
 }
 
 /* TOP BUTTONS */
@@ -39,7 +47,33 @@ html, body {
 
 }
 
-/* QUIZ */
+/* START SCREEN */
+
+#startScreen {
+
+    margin-top: 100px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+/* SELECT */
+
+select {
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    margin: 10px;
+
+    font-size: 16px;
+
+}
+
+/* QUIZ BOX */
 
 .question {
 
@@ -57,6 +91,26 @@ html, body {
     text-align: center;
 
     color: white;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.5s;
+
+}
+
+/* IMAGE */
+
+#animeImage {
+
+    width: 100%;
+
+    max-height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 15px;
 
 }
 
@@ -93,6 +147,8 @@ button:hover {
 
     transform: scale(1.05);
 
+    box-shadow: 0px 0px 15px lime;
+
 }
 
 /* MOBILE CLICK */
@@ -100,6 +156,32 @@ button:hover {
 button:active {
 
     transform: scale(0.92);
+
+}
+
+/* COLORS */
+
+#timer {
+
+    color: gold;
+
+}
+
+#progress {
+
+    color: lightblue;
+
+}
+
+#highScore {
+
+    color: lime;
+
+}
+
+#streak {
+
+    color: orange;
 
 }
 
@@ -112,5 +194,59 @@ button:active {
         width: 100%;
 
     }
+
+}
+
+/* XP BAR */
+
+.xpContainer {
+
+    width: 100%;
+
+    height: 25px;
+
+    background: rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+}
+
+#xpBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(to right, cyan, blue);
+
+    transition: 0.5s;
+
+}
+
+#levelText {
+
+    color: cyan;
+
+}
+
+input {
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    margin: 15px;
+
+    width: 220px;
+
+    font-size: 16px;
+
+    text-align: center;
 
 }
